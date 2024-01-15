@@ -10,6 +10,10 @@ public class Employee {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -30,6 +34,10 @@ public class Employee {
     private String firstName;
     @Column(name="last_name")
     private String lastName;
+
+    public Integer getId() {
+        return id;
+    }
 
     @Column(name="email")
     private String email;

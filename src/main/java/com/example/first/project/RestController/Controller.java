@@ -53,4 +53,20 @@ public class Controller {
             throw new RuntimeException("Employee Not found -" + employeeId);
         return employee;
     }
+    @PostMapping("/employeeDetail")
+    public Employee saveEmployeeDetail(@RequestBody Employee employee){
+        employee.setId(employee.getId());
+        Employee employee1=employeeManager.save(employee);
+        return employee1;
+    }
+    @PutMapping("/employees")
+    public Employee updateEmployeeDetail(@RequestBody Employee employee){
+        Employee employee1=employeeManager.save(employee);
+        return employee1;
+    }
+    @DeleteMapping("/deleteEmployee/{employeeId}")
+    public String deleteEmployeeDetail(@PathVariable Integer employeeId){
+        employeeManager.deleteById(employeeId);
+        return "delete employee --"+employeeId;
+    }
 }
